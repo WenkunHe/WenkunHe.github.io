@@ -5,19 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>个人网站</title>
     <style>
-        /* 设置整个页面的基础样式 */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f0f0f0;
-            height: 100vh; /* 使内容占满整个页面高度 */
+            height: 100vh;
         }
 
-        /* 容器样式 */
         .container {
             display: flex;
-            flex-direction: column;  /* 让内容垂直排列 */
+            flex-direction: column;
             background-color: #fff;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             padding: 20px;
@@ -25,9 +23,8 @@
             width: 100%;
         }
 
-        /* 第一部分: 个人照片和个人简介在同一行 */
         .profile-top {
-            display: flex;  /* 横向排列 */
+            display: flex;
             margin-bottom: 20px;
         }
 
@@ -40,10 +37,9 @@
         .photo img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* 确保照片不会变形 */
+            object-fit: cover;
         }
 
-        /* 个人简介样式 */
         .profile {
             max-width: 600px;
         }
@@ -59,31 +55,28 @@
             color: #555;
         }
 
-        /* 其他简介部分，确保左对齐 */
         .profile-bottom {
             max-width: 2000px;
         }
 
-        /* 模态框背景 */
         .modal {
-            display: none;  /* 默认不显示 */
+            display: none;
             position: fixed;
             z-index: 1;
             left: 0;
             top: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.7); /* 半透明黑色背景 */
+            background-color: rgba(0, 0, 0, 0.7);
         }
 
-        /* 模态框中的图片 */
         .modal-content {
             display: block;
             max-width: 80%;
             max-height: 80%;
-            margin: auto;  /* 确保在小屏幕上也能居中 */
+            margin: auto;
         }
-        /* 关闭按钮样式 */
+
         .close {
             position: absolute;
             top: 15px;
@@ -98,7 +91,6 @@
 <body>
 
   <div class="container">
-      <!-- 个人照片和个人简介在同一行 -->
       <div class="profile-top">
           <div class="photo">
               <img src="./pic/photo.jpg" alt="个人照片">
@@ -108,11 +100,10 @@
               <h1>Wenkun He(何文焜)</h1>
               <p>何文焜，男，汉族，2003年12月生，<a href="https://en.wikipedia.org/wiki/Fuqing" target="_blank">福建福清</a>人，现就读于清华大学交叉信息研究院（姚班）人工智能方向。</p>
               <p>Wenkun He is an undergraduate student majoring in AI at IIIS(Yao Class), Tsinghua University.</p>
-              <p>Email: wenkunhe2003 at hotmail dot com</p>
+              <p>Email: wenkunhe2003 at hotmail dot com; wenkun03 at mit dot edu</p>
           </div>
       </div>
 
-      <!-- 其他简介部分，显示在图片下方 -->
       <div class="profile-bottom">
         <h2>Resume</h2>
         <p><span class="date">2003.12</span>&nbsp;&nbsp;Born in <a href="https://en.wikipedia.org/wiki/Fuzhou" target="_blank">Fuzhou</a>, Fujian</p>
@@ -120,28 +111,34 @@
         <p><span class="date">2022.08-</span>&nbsp;&nbsp;Tsinghua University, <a href="https://iiis.tsinghua.edu.cn/" target="_blank">Yao Class</a>. Supervised under Prof. <a href="https://ericyi.github.io/" target="_blank">Li Yi</a> and Prof. <a href="https://www.tsinghua.edu.cn/info/1167/93851.htm" target="_blank">Bo Zhang</a> (Academician of the Chinese Academy of Sciences) 
             <a href="javascript:void(0);" onclick="openModal();">[img]</a>
         </p>
+      </div>
+
+      <div class="profile-bottom">
+        <h2>人物履历</h2>
+        <p><span class="date">2003.12</span>&nbsp;&nbsp;Born in <a href="https://en.wikipedia.org/wiki/Fuzhou" target="_blank">Fuzhou</a>, Fujian</p>
+        <p><span class="date">2016.09-2022.06</span>&nbsp;&nbsp;<a href="http://www.fzyz.net" target="_blank">Fuzhou No.1 High School</a>, <a href="http://www.fz3z.cn/" target="_blank">Fuzhou No.3 High School</a></p>
+        <p><span class="date">2022.08-</span>&nbsp;&nbsp;Tsinghua University, <a href="https://iiis.tsinghua.edu.cn/" target="_blank">Yao Class</a>. Supervised under Prof. <a href="https://ericyi.github.io/" target="_blank">Li Yi</a> and Prof. <a href="https://www.tsinghua.edu.cn/info/1167/93851.htm" target="_blank">Bo Zhang</a> (Academician of the Chinese Academy of Sciences) 
+            <a href="javascript:void(0);" onclick="openModal();">[img]</a>
+        </p>
+      </div>
     </div>
   </div>
 
-  <!-- 模态框 -->
   <div id="myModal" class="modal">
     <span class="close" onclick="closeModal();">&times;</span>
     <img class="modal-content" id="modalImage" src="" alt="Bo Zhang Image">
   </div>
 
   <script>
-    // 打开模态框并显示图片
     function openModal() {
         document.getElementById("myModal").style.display = "block";
-        document.getElementById("modalImage").src = "./pic/BoZhang.png";  // 替换为你图片的路径
+        document.getElementById("modalImage").src = "./pic/BoZhang.png";
     }
 
-    // 关闭模态框
     function closeModal() {
         document.getElementById("myModal").style.display = "none";
     }
 
-    // 点击模态框外部区域关闭模态框
     window.onclick = function(event) {
         var modal = document.getElementById("myModal");
         if (event.target == modal) {
